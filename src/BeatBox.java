@@ -52,6 +52,10 @@ public class BeatBox {
 		downTempo.addActionListener(new MyDownTempoListener());
 		buttonBox.add(downTempo);
 		
+		JButton clearSelectionButton = new JButton("Clear selection");
+		clearSelectionButton.addActionListener(new MyClearSelectionLister());
+		buttonBox.add(clearSelectionButton);
+		
 		Box nameBox = new Box(BoxLayout.Y_AXIS);
 		for (String instrument : instrumentNameStrings) {
 			nameBox.add(new Label(instrument));
@@ -150,6 +154,15 @@ public class BeatBox {
 			sequencer.setTempoFactor((float) (tempoFactor * .97));
 		}
 	}	
+	
+	public class MyClearSelectionLister implements ActionListener {
+		public void actionPerformed(ActionEvent a) {
+			for (JCheckBox checkBoxTemp : checkBoxList) {
+				checkBoxTemp.setSelected(false);
+			}
+		}
+	}	
+	
 	
 	public void makeTracks(int[] list){
 		for (int i = 0; i < 16; i++) {
