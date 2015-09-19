@@ -65,7 +65,6 @@ public class BeatBox {
 		
 		JButton clearSelectionButton = new JButton("Clear selection");
 		clearSelectionButton.addActionListener(new MyClearSelectionLister());
-		clearSelectionButton.setBorder(new EmptyBorder(10, 0, 0, 0));
 		buttonBox.add(clearSelectionButton);
 		
 		Box nameBox = new Box(BoxLayout.Y_AXIS);
